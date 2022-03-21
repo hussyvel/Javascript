@@ -1,0 +1,33 @@
+body {
+    margin: 20px;
+    
+
+}
+
+h1 {
+    margin-top: 0;
+    border: 10px;
+    padding: 20px;
+}
+
+div {
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+}
+
+div.two {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin-left: 200px;
+    border: solid 10px;
+}
+
+div.three {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+    margin-left: 420px;
+    border: solid 20px;
+}
