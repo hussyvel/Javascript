@@ -1,14 +1,16 @@
-let myVariable ='global'
-myOtherVariable = 'global'
+let myVariable = 'global';
+myOtherVariable = 'global';
 
-function myFunction() {
+function myFunction(){
     let myVariable = 'local';
     return myVariable;
 }
 
-function myOtherFunction() {
+function myOtherVariable(){
     myOtherVariable = 'local';
     return myOtherVariable;
 }
 
 console.log(myVariable);
+console.log(myFunction());
+

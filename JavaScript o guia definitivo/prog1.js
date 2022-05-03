@@ -1,3 +1,5 @@
+const { Container } = require("react-bootstrap")
+
 let then = new Date (20)
 console.log(then)
 
@@ -11,5 +13,36 @@ console.log(now)
 let elapsed = now - then 
 console.log(elapsed)
 
- now = later.getFullYear()
+now = later.getFullYear()
 console.log(now)
+
+now = later.getMonth()
+console.log(now)
+
+now = later.getDate()
+console.log(now)
+
+now = later.getDay()
+console.log(now)
+
+now = later.getHours()
+console.log(now)
+
+now = later.getUTCHours()
+console.log(now)
+
+now = later.toString()
+console.log(now)
+
+now = later.toUTCString()
+console.log(now)
+
+now = later.toLocaleDateString()
+console.log(now)
+
+now = later.toLocaleTimeString()
+console.log(now)
+
+now = later.toISOString()
+console.log(now)
+

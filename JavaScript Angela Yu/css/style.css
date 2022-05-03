@@ -1,33 +1,35 @@
 body {
     margin: 20px;
-    
-
+    text-align: center;
 }
 
 h1 {
     margin-top: 0;
-    border: 10px;
-    padding: 20px;
+ 
 }
 
-div {
-    background-color: aquamarine;
+.top-container {
+   background-color: #E4F9F5;
+}
+
+.middle-container {
+    background-color: chartreuse;
     width: 200px;
     height: 200px;
 }
 
-div.two {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    margin-left: 200px;
-    border: solid 10px;
-}
 
-div.three {
+.bottom-container {
     width: 200px;
     height: 200px;
     background-color: brown;
-    margin-left: 420px;
-    border: solid 20px;
+}
+
+.pro {
+    text-decoration: underline;
+}
+
+a img {
+    position: relative;
+    bottom: 45px;
 }
