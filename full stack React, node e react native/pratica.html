@@ -7,12 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <form onsubmit="return calcular(event)">
+        <label for="">Digite seu peso</label><br><br>
+        <input type="text" name="peso" id="peso" placeholder=" 80kg"/><br><br>
     
-    <h2 id="demo"></h2>
+        <label for="">Digite a sua altura</label><br><br>
+        <input type="text" name="altura" id="altura" placeholder="1.90"/><br><br>
 
-    <button onclick="entrar()">
-        Clique aqui
-    </button>
-    <script src="/js/loops.js"></script>
+        <input type="submit" value="calcular Imc">
+    </form>
+
+    <div id="resultado">Resultado</div>
+
+    <script src="/js/pratica.js"></script>
 </body>
 </html>
