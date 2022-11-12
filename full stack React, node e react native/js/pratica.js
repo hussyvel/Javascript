@@ -1,24 +1,18 @@
-let var1 = document.getElementById('div')
+let peso;
+let altura;
+let imc;
+let resultado;
 
-function entrar(){
-    let nome = prompt("Qual o seu nome?");
+function calcular(event){
+    event.preventDefault();
 
-    if(nome === ' ' || nome === null){
-        alert("opa, aqui deu ruim")
-        var1.innerHTML = "Bem vindo " + nome;
-    }else{
-        alert("Deu certo")
-        var1.innerHTML = "Bem vindo " + nome;
-        
-        let botaoSair = document.createElement('button')
-        botaoSair.innerText = "sair da conta " 
-        botaoSair.onclick = sair;
+    peso = document.getElementById('peso').value;
+    altura = document.getElementById('altura').value;
 
-        var1.appendChild(botaoSair)
+    imc = peso /(altura * altura);
+    
+    if(resultado < 17){
+        resultado = document.getElementById('resultado');
+        resultado.innerHTML = '<br> Seu resultado foi ' + imc + '<br> Cuidado você está muito abaixo do peso'
     }
-}
-
-function sair(){
-    alert("Até mais")
-    var1.innerHTML = 'Você saiu '
 }
