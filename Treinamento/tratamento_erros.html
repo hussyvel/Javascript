@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Site da Philips</h1>
+    <p>Meu parágrafo</p>
+    <p id="demo"></p>
+
+
+    <script>
+        setInterval(function(){
+
+        try{
+/*            let hora = novaHora.getHours();
+            let minuto = novaHora.getMinutes();
+            let segundo = novaHora.getSeconds();
+
+            minuto = minuto.toString().padStart(2, 0);
+            segundo = segundo.toString().padStart(2, 0);
+*/ 
+            document.getElementById('tempo').textContent = hora + ':' + minuto +':'+ segundo;
+        } catch(erro){   
+            document.getElementById('demo').innerHTML = "Existe um problema nessa página =" + erro.name + ' | ' + erro.message;
+        }
+ 
+    }, 1000)
+    </script>    
+</body>
+</html>
