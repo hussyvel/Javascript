@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Tabuada</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-        let n = 34
 
+        let numero = prompt("Digite um valor")
+
+ /*       let indice = 11
+        while(indice <= 10){
+            document.write(`${indice} x ${numero} = (${indice * numero})<br/>`)
+            indice++
+        }
+            document.write(`Saiu do loop <br/>`)
+*/      
+        let indice = 0
+
+        do{
+            if(indice){
+                alert(`índice`)
+            }
+            document.write(`${indice} x ${numero} = (${indice * numero})<br/>`)
+            indice++
+        }while(indice <= 10)
+
+       
+/*          for(indice = 1; indice <= 10; indice++){
+            if(indice === 5){
+                continue
+            }
+                document.write(`${indice} x ${numero} = (${indice * numero})<br/>`)
+            }
+            document.write("Saiu do loop")  
+*/ 
     </script>
 </body>
 </html>
