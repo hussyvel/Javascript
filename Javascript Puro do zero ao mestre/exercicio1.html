@@ -9,18 +9,27 @@
     <h1>Tabuada</h1>
 
     <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
-    <button>Limpar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
 
     <div id="output"></div>
 
     <script>
 
-        const output = document.getElementById('output')
+        const n = document.getElementById('output')
 
         function mostrarTabuada(){
+            
             //output.innerHTML = "valor <br/>"
-            let resultado = prompt("Digite um valor: ")
-            resultado.innerHTML = "O resultado é " 
+            let resultado = parseFloat(prompt("Digite um valor: "))
+ 
+            let msg = " "
+
+            for(let i = 0; i<= 1000; i++){
+                msg += "imprimindo 1000 vezes o resultado: " + i + "<br/>"
+            }
+
+            n.innerHTML = `${msg}`            
+            
         }
         
     </script>
