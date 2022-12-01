@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -15,25 +17,24 @@
 
     <script>
 
-        const n = document.getElementById('output')
+        const n = document.getElementById("output")
 
         function mostrarTabuada(){
             
             //output.innerHTML = "valor <br/>"
-            let resultado = parseFloat(prompt("Digite um valor: "))
+            let valor = parseFloat(prompt("Digite um valor: "))
  
-            let msg = " "
+            let msg = ""
 
             for(let i = 0; i<= 1000; i++){
-                msg += "imprimindo 1000 vezes o resultado: " + i + "<br/>"
+                msg += `${valor} x ${i} = ${(valor * i)}<br/>`
             }
 
-            n.innerHTML = `${msg}`            
+            n.innerHTML = msg         
             
         }
         
     </script>
-
 
 </body>
 
