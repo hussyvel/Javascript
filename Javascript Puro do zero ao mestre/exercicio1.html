@@ -26,12 +26,16 @@
  
             let msg = ""
 
-            for(let i = 0; i<= 1000; i++){
+            for(var i = 0; i<= 1000; i++){
                 msg += `${valor} x ${i} = ${(valor * i)}<br/>`
             }
 
             n.innerHTML = msg         
             
+        }
+
+        function limparTabuada(){
+            n.innerHTML = "<p>testes</p>"
         }
         
     </script>

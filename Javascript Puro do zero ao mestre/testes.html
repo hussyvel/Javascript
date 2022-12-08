@@ -2,10 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   
     <title>Document</title>
 </head>
 <body>
-    
+
+    <button onclick="mostrarTabuada()">Mostrar</button>
+    <button onclick="limparTabuada()">Limpar</button>
+
+    <div id="output"></div>
+
+<script>
+
+    const n = document.getElementById("output")
+
+    function mostrarTabuada(){
+        let valor = parseFloat(prompt(`Digite um valor: `))
+
+        let msg = ""
+
+        for(let i = 0; i < 20; i++){
+
+            if(i === 15){
+                continue
+            }
+            msg += `${i} x ${valor} = ${ i * valor}<br/>`
+           
+        }
+
+        n.innerHTML = msg
+    }
+
+    function limparTabuada(){
+        n.innerHTML = ""
+    }
+
+    console.log(mostrarTabuada())
+
+</script>
+
 </body>
 </html>
