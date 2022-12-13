@@ -8,5 +8,6 @@ const pessoa = {
 console.log(pessoa)
 
 for(let prop in pessoa){
+    console.log(prop)
     console.log(pessoa[prop])
 }
