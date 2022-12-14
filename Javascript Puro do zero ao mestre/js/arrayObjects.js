@@ -23,5 +23,7 @@ const pessoas = [{
 */
 
 for(let i = 0; i < pessoas.length; i++){
-    console.log(`${pessoas[i].nome} possui ${pessoas[i].idade} anos`)
+    console.log(`${pessoas[i].nome} possui ${pessoas[i].idade} anos de idade`)
 }
+
+
