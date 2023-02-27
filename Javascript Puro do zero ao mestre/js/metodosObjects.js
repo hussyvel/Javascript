@@ -1,25 +1,14 @@
 const produto = {
-    nome: "lápis",
-    qtd: 50,
-    comprar: function(n){
+    nome: "caneta",
+    qtd: 10,
+    comprar(n){ /*metodo comprar recebe uma função*/
+        console.log(this)
         if(n > this.qtd){
-            return "quantidade indisponível"
+            return "quantidade não disponível" /*a palavra retun vai sair da função*/
         }
         this.qtd -= n
-    },
-    teste1: function(){
-        console.log("teste 1")
-        console.log(this)//mostra o objeto apontado no caso comprar
-    },
-    teste2:()=>{
-        console.log("teste2")
-        console.log(this)
     }
 }
 
-produto.comprar(15)
+produto.comprar(23)
 console.log(produto)
-
-produto.teste1()
-
-produto.teste2()
