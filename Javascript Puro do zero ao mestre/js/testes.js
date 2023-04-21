@@ -1,17 +1,14 @@
-function generateRandomNumber(max){
-    return parseInt(Math.random() * max)
+const main =(numero) =>{
+    let numeroPrimo = [2, 3, 5, 7, 11, 13];
+    let novosNumerosPrimos = [numero];
+
+novosNumerosPrimos = numeroPrimo.map(numero => numero);
+
+console.log(novosNumerosPrimos);
 }
 
-let arr = []
+main()
 
-while(arr.length <= 10 - 1){
-    let teste = generateRandomNumber(10)
 
-    if(arr.indexOf(teste) <= 0){
-        arr.push(teste)
-    }else{
-        console.log(teste, "esse número é repetido")
-    }
-}
 
-console.log(arr)
+

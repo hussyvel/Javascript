@@ -1,7 +1,10 @@
-function soma(x, y){
-    return x + y
+function soma(a ,b) {
+    return a + b
 }
 
-module.exports={
+let teste = "Qualquer"
+
+module.exports ={
+    teste,
     soma
 }
