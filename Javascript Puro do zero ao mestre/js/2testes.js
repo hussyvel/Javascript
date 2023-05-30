@@ -1,8 +1,6 @@
-let teste = [1,2,3]
-console.log(teste)
+function myfunction(){
+    console.log("Definindo uma função");
+}
 
-teste.push(3,4)
-console.log(teste)
-
-teste.indexOf(3)
+let teste = myfunction("texto");
 console.log(teste)
