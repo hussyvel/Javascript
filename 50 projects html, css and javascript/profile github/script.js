@@ -12,7 +12,7 @@ async function getUser(username) {
         getRepos(username)
     } catch(err) {
         if(err.response.status == 404) {
-            createErrorCard('Perfil não encontrado!!!')
+            createErrorCard('Perfil não encontrado')
         }
     }
 }
