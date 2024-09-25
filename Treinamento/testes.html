@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="nome"></div>
+
+    <p>Escreva um programa que pergunte ao usuário qual o nome dele através de um alert e mostre o nome do usuário numa tag h1 </p>
+    <p>Peça ao usuário para digitar 5 números</p>
+    <p>Exiba na tela em tag p cada um dos números</p>
+    <p>Exiba na tela em tag h1 a soma dos 5 numeros</p>
+    <p>Exiba na tela em tag h2 o produto dos 5 números</p>
+    <p>Exiba na tela em tag h3 a média dos 5 números</p>
+
+    <script>
+
+        let listArray = []
+        let count = 0
+
+        while(count < 5){
+            listArray[count] = parseInt(prompt("Digite um valor: "))
+            count++;
+        }
+
+        document.write("<h1> Lista de números do Array</h1>")
+        let sum = 0
+        let produto = 1;
+
+        for(let i = 0; i < listArray.length; i++){
+            document.write("<p> Numero " + (i + 1) + " = " + listArray[i] + "</p>")
+            console.log(listArray[i])
+            sum += listArray[i]
+            console.log(sum)
+            produto *= listArray[i]
+            console.log(produto)
+        }
+
+        document.write("<h1> A soma é " + sum + " </h1>")
+        document.write("<h1> O produto é " + produto + "</h1>")
+        document.write("<h1> A média é " + sum/listArray.length + "</h1>")
+        
+    </script>
+</body>
+</html>

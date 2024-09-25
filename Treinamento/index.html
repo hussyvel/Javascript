@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="prog2.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="nome"></div>
+    <p>Escreva um programa que pergunte ao usuário qual o nome dele através de um alert e mostre o nome do usuário numa tag h1 </p>
+    <p>Peça ao usuário para digitar 5 números</p>
+    <p>Exiba na tela em tag p cada um dos números</p>
+    <p>Exiba na tela em tag h1 a soma dos 5 numeros</p>
+    <p>Exiba na tela em tag h2 o produto dos 5 números</p>
+    <p>Exiba na tela em tag h3 a média dos 5 números</p>
+
+
+<script>
+/*
+        let retorno = prompt('Qual é o seu nome? ');
+        console.log('O nome do usuário é ' + retorno)
+        document.getElementById("nome").innerHTML = "O seu nome é " + retorno
+*/ 
+        let listaNumeros = [];
+
+        let contador = 0;
+
+        while(contador < 5) {
+            listaNumeros[contador] = parseInt(prompt('Favor digitar um número ' + (contador + 1)));
+            contador++;
+        }
+
+        let sum = 0;
+        let produto = 1;
+       
+
+        document.write("<h1> Lista dos Números Fornecidos</h1>");
+        
+        for(let i = 0; i < listaNumeros.length ; i++){
+            document.write("<p> Numero " + (i + 1) + " = " + listaNumeros[i] + "</p>")
+            console.log("O valor de i é: " + i)
+            sum += listaNumeros[i];
+            produto *= listaNumeros[i];
+        }
+        
+        document.write("<h1> Soma dos números " + sum + "</h1>")      
+        document.write("<h2> Produto dos Números " + produto + " </h2>")
+        document.write("<h3> A media dos números é " + (sum/listaNumeros.length) + "</h3>")
+
+    </script>
+</body>
+
+</html>
