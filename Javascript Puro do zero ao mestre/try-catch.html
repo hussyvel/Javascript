@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/try-catch.js"></script> 
+
+    <script>
+       /* console.log(sum(2, 6))
+        alert(sum(3, "hussyvel"))
+        document.write(sum(4,8)) */ 
+        let soma = ""
+        try{
+            soma = sum(3, "hussyvel")
+        }catch(e){
+            //alert("Ocorreu um erro")
+            console.log(e.message)
+            alert(e.message)
+        }finally{
+            console.log("Bloco Finally é executado com ou sem erro.")
+        }
+
+        console.log(soma)
+        console.log("Fim do programa")
+    
+    </script>
+
+</body>
+
+</html>

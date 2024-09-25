@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        }
+
+        .formulario {       
+            margin-top: 250px;
+            margin-left: 700px;
+            width: 200px;
+            
+        }
+    </style>
+</head>
+<body>
+        <div class="formulario">
+            <form action="/index.html" method="post">
+                <label for="nome">Nome:</label><br>
+                <input type="text" name="nome" id="nome" value="Hussyvel"><br>
+
+                <label for="last_name" method="post">Sobrenome</label><br>
+                <input type="text" name="last_name" id="last_name" value="Ribeiro"><br>
+
+                <input type="submit" value="submit">
+            </form>
+
+            <br><br><br><br>
+
+            <form>
+                <input type="radio" id="html" name="nome" value="HTML">
+                <label for="html">HTML</label><br>
+                <input type="radio" id="CSS" name="nome" value="CSS">
+                <label for="CSS">CSS</label><br>
+                <input type="radio" id="javascript" name="nome" value="JavaScript">
+                <label for="javascript">JavaScript</label><br>
+            </form>
+
+            <br><br><br><br>
+
+            <form>
+                <fieldset>
+                    <legend>Escolha seu sexo</legend>
+                    <p>
+                        <input type="radio" name="size" id="size_1" value="small">
+                        <label for="size_1">Pequeno</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="size" id="size_2" value="medium">
+                        <label for="size_3">Medium</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="size" id="size_3" value="large">
+                        <label for="size_3">Large</label>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Tabuada</h1>
+
+    <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        const n = document.getElementById("output")
+
+        function mostrarTabuada(){
+            
+            //output.innerHTML = "valor <br/>"
+            let valor = parseFloat(prompt("Digite um valor: "))
+ 
+            let msg = ""
+
+            for(var i = 0; i<= 1000; i++){
+                msg += `${valor} x ${i} = ${(valor * i)}<br/>`
+            }
+
+            n.innerHTML = msg         
+            
+        }
+
+        function limparTabuada(){
+            n.innerHTML = "<p>testes</p>"
+        }
+        
+    </script>
+
+</body>
+
+</html>

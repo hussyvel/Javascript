@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //declaração de função
+        function ola(){
+            document.write("teste de função")
+        }
+
+        ola()
+
+
+        //expressão de função
+        const teste = function (){
+            console.log("ola mundo")
+        }
+
+        teste()
+        
+        //arrow functions
+        const arrow_functions = ()=>{
+            console.log("Olá arrow functions")
+        }
+
+        arrow_functions()
+
+        
+        //retorno de função
+        function obtemDiaMes(){
+            return new Date().getDate()
+        }
+
+        let obt = obtemDiaMes()
+        console.log(obt)
+
+
+        function somar(n1, n2){
+            return n1 + n2
+        }
+
+        let soma = somar(2,6)
+        console.log(soma)
+
+
+
+    </script>
+    
+</body>
+</html>

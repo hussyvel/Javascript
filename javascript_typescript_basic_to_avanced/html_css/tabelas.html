@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        table{
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        table tr, table th{
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        table tbody, table td{
+            border:1px solid #ccc;
+            padding: 10px;
+        }
+
+        table caption {
+            font-size: 14px;
+            font-style: italic;
+            text-align: left;  /* right                            */
+            caption-side: top; /*bottom deixa a descrição em baixo */   
+            margin-bottom: 25px;         
+        }
+
+        tfoot td, table th{
+            background: #ddd;
+            font-style: italic;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .responsive-table {
+           max-width: 100%;
+           overflow-x: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    Veniam incidunt consequuntur vero quasi tenetur, dolorum ex nihil molestias possimus 
+    ipsa nisi similique quas eum dolor tempora nostrum adipisci omnis deleniti!</p>
+    
+    <div class="responsive-table">
+        <table>
+            <caption>Descrição</caption>
+            <thead>
+                <tr>
+                    <th>Th dentro de tr - titulo 1</th>
+                    <th>Th dentro de tr - titulo 2</th>
+                    <th>Th dentro de tr - titulo 3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Conteudo 1</td> <!--colspan é para colunas-->
+                    <td>Conteudo 2</td>
+                    <td>Conteudo 3</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Aqui</td>
+                    <td>Conteudo 2</td>
+                </tr>
+                <tr>
+                    <td>Conteudo 1</td>
+                    <td>Conteudo 2</td>
+                    <td>Conteudo 3</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2" rowspan="2"></td>
+                    <td>Total</td>
+                </tr>
+                <tr>
+                    <td>800.00</td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>    
+</body>
+</html>

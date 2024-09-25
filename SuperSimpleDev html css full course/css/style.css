@@ -1,0 +1,37 @@
+.substribe-button {
+    background-color: red;
+    color: white;
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.join-button{
+    background-color: white;
+    border-color: rgb(41, 118, 211);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    color: rgb(41, 118, 211);
+    height: 36px;
+    width: 62px;
+    cursor: pointer;
+    
+}
+
+.tweet-button {
+    background-color: blue;
+    color: white;
+    border-radius: 18px;
+    width: 70px;
+    height: 36px;
+    border-style: solid;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8px;
+}
