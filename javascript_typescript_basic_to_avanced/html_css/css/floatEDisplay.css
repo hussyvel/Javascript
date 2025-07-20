@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    padding: 15px;
+}
+
+.grid::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 20px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 200, 0.8);
+    color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .grid .col {
+        width: 50%;
+    }
+    
+}

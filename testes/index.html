@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Cupom de Desconto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #resultado {
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🛒 Aplicar Cupom de Desconto HorseAcademy Experience</h2>
+
+    <p><strong>Valor da Compra: R$ <span id="valorFixo">600.00</span></strong></p>
+
+    <label>Digite o Cupom:</label>
+    <input type="text" id="codigoCupom" placeholder="Ex: HORSEACADEMY">
+
+    <br>
+
+    <button onclick="calcularDesconto()">Aplicar Cupom</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const valorFixo = 600.00; // Valor fixo da compra
+
+        const cupons = {
+            "HORSEACADEMY2025": 15,   // 15% de desconto
+            "BLACKFRIDAY": 20, // 20% de desconto
+            "DESCONTO10": 10   // 10% de desconto
+        };
+
+        function calcularDesconto() {
+            let codigoCupom = document.getElementById("codigoCupom").value.toUpperCase();
+            let resultado = document.getElementById("resultado");
+
+            if (cupons.hasOwnProperty(codigoCupom)) {
+                let desconto = cupons[codigoCupom];
+                let valorFinal = valorFixo - (valorFixo * (desconto / 100));
+
+                resultado.innerHTML = `✅ Cupom "${codigoCupom}" aplicado!<br>
+                                       💲 Desconto: ${desconto}%<br>
+                                       💳 Total com desconto: R$${valorFinal.toFixed(2)}`;
+            } else {
+                resultado.innerHTML = "🚨 Cupom inválido ou expirado!";
+            }
+        }
+    </script>
+
+</body>
+</html>
+

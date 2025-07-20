@@ -1,0 +1,20 @@
+#p {
+    background: red;
+}
+
+.p {
+    background: blue;
+}
+
+p#p {
+    background: green;
+}
+p.p {
+    background: yellow;
+}
+p {
+    background: orange;
+}
+p#p.p {
+    background: purple;
+}

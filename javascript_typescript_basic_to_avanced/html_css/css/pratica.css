@@ -1,0 +1,20 @@
+.heading {
+
+    transition: all 200ms ease-in-out;  
+}
+
+.heading:hover {
+  background: #ff6347; /* Tomato color */
+}
+
+a {
+    color: #ff6347;
+}
+
+a:link {
+    color: #476cff;
+}
+
+a:visited {
+    color: #47ff4a;
+}
