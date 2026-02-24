@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresso - Natal em Canções</title>
+    <style>
+        /* Fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap');
+
+        :root {
+            --primary-bg: #031121;
+            --accent-gold: #cfae68;
+            --text-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ccc; /* Fundo cinza para ver a folha branca */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* CONFIGURAÇÃO DA FOLHA A4 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 10mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4mm;
+        }
+
+        /* ESTRUTURA DO INGRESSO */
+        .ticket {
+            display: flex;
+            width: 100%;
+            height: 75mm;
+            border: 1px solid #999;
+            background-color: white;
+            position: relative;
+            overflow: hidden; /* Corta o que passar das bordas */
+        }
+
+        /* --- CANHOTO (Esquerda) --- */
+        .stub {
+            width: 28%;
+            border-right: 2px dashed #444;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #fff;
+            color: #000;
+            z-index: 10; /* Fica acima da imagem */
+        }
+
+        .stub h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 0 0 5px 0;
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+        }
+
+        .input-line { font-size: 10px; margin-bottom: 5px; }
+        .line { border-bottom: 1px solid #aaa; height: 14px; width: 100%; }
+        
+        /* Nova classe para dividir a linha */
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .stub-number { text-align: center; font-weight: 900; color: #c00; font-size: 16px; }
+
+        /* --- PARTE PRINCIPAL (Direita) --- */
+        .main-ticket {
+            width: 72%;
+            position: relative; /* Necessário para posicionar a imagem */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* --- IMAGEM DE FUNDO --- */
+        .ticket-bg-layer {
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; /* Faz a imagem cobrir tudo sem distorcer */
+            z-index: 0; /* Fica no fundo */
+        }
+
+        /* --- CONTEÚDO --- */
+        .ticket-content {
+            z-index: 2; /* Fica na frente da imagem */
+            width: 100%;
+            height: 100%;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* LOGO - Agora vazio para servir apenas de espaçador */
+        .logo-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+        
+        /* TEXTOS */
+        .info-bar {
+            display: flex;
+            justify-content: space-between;
+            
+            /* RECUO: Ajustado para 95% (equilíbrio) */
+            width: 95%; 
+            
+            color: #fff;
+            font-size: 11px;
+            text-shadow: 1px 1px 2px #000;
+            background: rgba(0,0,0,0.4);
+            padding: 5px 15px;
+            border-radius: 4px;
+            
+            margin-bottom: 45px; 
+        }
+        
+        .info-col { text-align: left; }
+        .info-col.right { text-align: right; }
+        .info-label { color: #cfae68; font-weight: bold; font-size: 9px; display: block; }
+
+        /* PREÇO E NÚMERO */
+        .price-badge {
+            position: absolute; top: 15px; right: 15px;
+            background: #cfae68; color: #000;
+            padding: 5px 10px; font-weight: bold; border-radius: 15px;
+            font-size: 14px; z-index: 10;
+        }
+        .ticket-num-badge {
+            position: absolute; bottom: 12px; right: 15px;
+            font-weight: bold; font-size: 16px; color: #cfae68;
+            background: rgba(0,0,0,0.8); padding: 4px 10px;
+            border-radius: 6px; border: 1px solid #cfae68; z-index: 10;
+        }
+
+        /* MODO DE IMPRESSÃO */
+        @media print {
+            body { background: none; padding: 0; }
+            .page { margin: 0; width: 100%; box-shadow: none; }
+            .ticket { page-break-inside: avoid; }
+            /* Garante que imagens apareçam */
+            img { display: block !important; } 
+            -webkit-print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+
+        <!-- ================= INGRESSO 1 ================= -->
+        <div class="ticket">
+            <div class="stub">
+                <h3>Canhoto</h3>
+                <div class="input-line">Nome: <div class="line"></div></div>
+                <div class="input-line">Tel: <div class="line"></div></div>
+                
+                <div class="input-row">
+                    <div class="input-line" style="width: 55%">E-mail: <div class="line"></div></div>
+                    <div class="input-line" style="width: 40%">Hora Pgto: <div class="line"></div></div>
+                </div>
+
+                <div class="stub-number">Nº 0001</div>
+            </div>
+
+            <div class="main-ticket">
+                <!-- ⚠️ COLOQUE AQUI O NOME DA SUA IMAGEM DE FUNDO (CARTAZ) -->
+                <img src="img/natal.jpeg" class="ticket-bg-layer" alt="Fundo">
+
+                <div class="price-badge">R$ 25,00</div>
+
+                <div class="ticket-content">
+                    <div class="logo-area">
+                        <!-- Tags de logo removidas conforme solicitado -->
+                    </div>
+
+                    <div class="info-bar">
+                        <div class="info-col">
+                            <span class="info-label">DATA & HORA</span>
+                            18 e 19/DEZ às 20H
+                        </div>
+                        <div class="info-col right">
+                            <span class="info-label">LOCAL</span>
+                            SEBRAE Multicenter<br>Auditório Darcy Ribeiro
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-num-badge">Nº 0001</div>
+            </div>
+        </div>
+
+
+        <!-- ================= INGRESSO 2 ================= -->
+        <div class="ticket">
+            <div class="stub">
+                <h3>Canhoto</h3>
+                <div class="input-line">Nome: <div class="line"></div></div>
+                <div class="input-line">Tel: <div class="line"></div></div>
+                
+                <div class="input-row">
+                    <div class="input-line" style="width: 55%">E-mail: <div class="line"></div></div>
+                    <div class="input-line" style="width: 40%">Hora Pgto: <div class="line"></div></div>
+                </div>
+
+                <div class="stub-number">Nº 0002</div>
+            </div>
+            <div class="main-ticket">
+                <img src="img/natal.jpeg" class="ticket-bg-layer" alt="Fundo">
+                <div class="price-badge">R$ 25,00</div>
+                
+                <div class="ticket-content">
+                    <div class="logo-area"></div>
+                    <div class="info-bar">
+                        <div class="info-col">
+                            <span class="info-label">DATA & HORA</span>
+                            18 e 19/DEZ às 20H
+                        </div>
+                        <div class="info-col right">
+                            <span class="info-label">LOCAL</span>
+                            SEBRAE Multicenter<br>Auditório Darcy Ribeiro
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-num-badge">Nº 0002</div>
+            </div>
+        </div>
+
+        <!-- ================= INGRESSO 3 ================= -->
+        <div class="ticket">
+            <div class="stub">
+                <h3>Canhoto</h3>
+                <div class="input-line">Nome: <div class="line"></div></div>
+                <div class="input-line">Tel: <div class="line"></div></div>
+                
+                <div class="input-row">
+                    <div class="input-line" style="width: 55%">E-mail: <div class="line"></div></div>
+                    <div class="input-line" style="width: 40%">Hora Pgto: <div class="line"></div></div>
+                </div>
+
+                <div class="stub-number">Nº 0003</div>
+            </div>
+            <div class="main-ticket">
+                <img src="img/natal.jpeg" class="ticket-bg-layer" alt="Fundo">
+                <div class="price-badge">R$ 25,00</div>
+                
+                <div class="ticket-content">
+                    <div class="logo-area"></div>
+                    <div class="info-bar">
+                        <div class="info-col">
+                            <span class="info-label">DATA & HORA</span>
+                            18 e 19/DEZ às 20H
+                        </div>
+                        <div class="info-col right">
+                            <span class="info-label">LOCAL</span>
+                            SEBRAE Multicenter<br>Auditório Darcy Ribeiro
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-num-badge">Nº 0003</div>
+            </div>
+        </div>
+
+        <!-- ================= INGRESSO 4 ================= -->
+        <div class="ticket">
+            <div class="stub">
+                <h3>Canhoto</h3>
+                <div class="input-line">Nome: <div class="line"></div></div>
+                <div class="input-line">Tel: <div class="line"></div></div>
+                
+                <div class="input-row">
+                    <div class="input-line" style="width: 55%">E-mail: <div class="line"></div></div>
+                    <div class="input-line" style="width: 40%">Hora Pgto: <div class="line"></div></div>
+                </div>
+
+                <div class="stub-number">Nº 0004</div>
+            </div>
+            <div class="main-ticket">
+                <img src="img/natal.jpeg" class="ticket-bg-layer" alt="Fundo">
+                <div class="price-badge">R$ 25,00</div>
+                
+                <div class="ticket-content">
+                    <div class="logo-area"></div>
+                    <div class="info-bar">
+                        <div class="info-col">
+                            <span class="info-label">DATA & HORA</span>
+                            18 e 19/DEZ às 20H
+                        </div>
+                        <div class="info-col right">
+                            <span class="info-label">LOCAL</span>
+                            SEBRAE Multicenter<br>Auditório Darcy Ribeiro
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-num-badge">Nº 0004</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

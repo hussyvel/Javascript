@@ -1,5 +1,5 @@
-p {
-    font-size: 0.5em;
+html {
+    font-size: 80,4%;
 }
 
 .pai {
@@ -7,3 +7,6 @@ p {
 }
 
 
+p {
+    font-size: 1.0rem; 
+}
